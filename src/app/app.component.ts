@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'realestate-frontend';
+
+  @ViewChild('sidenav') sidenav!: MatSidenav
+
+  constructor(private router: Router) {
+
+    this.router.events.subscribe(event => {
+      this.sidenav.close()
+
+    });
+  }
+
+
 }

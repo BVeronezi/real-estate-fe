@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    <span> Real Estate </span>
+    <span class="example-spacer"></span>
+</mat-toolbar>
